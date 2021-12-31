@@ -1,8 +1,15 @@
 import React from 'react';
+import Splash from './splash/splash';
+import Navbar from './navbar/navbar';
 
 const App = () => {
   return (
-    <h1>Hello World</h1>
+    <div>
+      <header>
+        <Navbar/>
+      </header>
+      <Splash />
+    </div>
   )
 };
 
