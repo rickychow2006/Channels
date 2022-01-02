@@ -49,7 +49,7 @@ class LoginForm extends React.Component {
     return (
       <div className="form-page">
         <div className="form__wrapper">
-          <form onClick={this.handleSubmit} > 
+          <form onSubmit={this.handleSubmit} > 
             <div className="form__header">
               <h1>Sign in to Channels</h1>
             </div>
