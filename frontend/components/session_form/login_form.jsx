@@ -51,7 +51,9 @@ class LoginForm extends React.Component {
         <div className="form__wrapper">
           <form onSubmit={this.handleSubmit} > 
             <div className="form__header">
-              <h1>Sign in to Channels</h1>
+              <h1>Sign in to</h1>
+              <img src={window.logo} alt=""/>
+              <h1>Channels</h1>
             </div>
               <h3 className="login-input-header">
                 Enter your email address and password.
@@ -75,7 +77,7 @@ class LoginForm extends React.Component {
                   placeholder="Input Password"/>
             </div>
             <div className='form__button'>
-              <button type="submit">Login Up</button>
+              <button type="submit">Login</button>
             </div>
           </form>
         </div>

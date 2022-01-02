@@ -23,7 +23,6 @@ class SignUpForm extends React.Component {
 
   handleSubmit(event) {
       event.preventDefault();
-      console.log(this.state)
       this.props.signup(this.state);
   };
 
@@ -53,7 +52,9 @@ class SignUpForm extends React.Component {
         <div className="form__wrapper">
           <form onSubmit={this.handleSubmit}> 
             <div className="form__header">
-              <h1>Sign up with Channels</h1>
+              <h1>Sign up with</h1>
+              <img src={window.logo} alt=""/>
+              <h1>Channels</h1>
             </div>
             <div className="errors">
               {this.renderErrors()}
