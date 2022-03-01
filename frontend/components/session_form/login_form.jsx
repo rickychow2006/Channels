@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
 
   demoUserSubmit(event) {
     event.preventDefault();
-    this.props.log({email:"demouser@gmail.com", password:"password"})
+    this.props.login({ email: "demouser@gmail.com", password: "password" });
   };
 
   renderErrors() {
@@ -78,6 +78,9 @@ class LoginForm extends React.Component {
             </div>
             <div className='form__button'>
               <button type="submit">Login</button>
+            </div>
+            <div className='form__button'>
+              <button onClick={this.demoUserSubmit}>Demo Login</button>
             </div>
           </form>
         </div>
