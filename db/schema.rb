@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_31_053300) do
+ActiveRecord::Schema.define(version: 2022_02_27_182024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channel_users", force: :cascade do |t|
+    t.integer "channel_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "pending", default: false
+    t.index ["channel_id"], name: "index_channel_users_on_channel_id"
+    t.index ["user_id"], name: "index_channel_users_on_user_id"
+  end
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "public", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "admin_id"
+    t.index ["name"], name: "index_channels_on_name", unique: true
+  end
+
+  create_table "cmessages", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "author_id", null: false
+    t.integer "channel_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_cmessages_on_author_id"
+    t.index ["body"], name: "index_cmessages_on_body"
+    t.index ["channel_id"], name: "index_cmessages_on_channel_id"
+  end
+
+  create_table "dmessages", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "receiver_id"
+    t.index ["author_id"], name: "index_dmessages_on_author_id"
+    t.index ["body"], name: "index_dmessages_on_body"
+    t.index ["receiver_id"], name: "index_dmessages_on_receiver_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -22,8 +64,8 @@ ActiveRecord::Schema.define(version: 2021_12_31_053300) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["session_token"], name: "index_users_on_session_token"
+    t.index ["session_token"], name: "index_users_on_session_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
