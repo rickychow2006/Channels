@@ -5,7 +5,7 @@ class CreateDmessages < ActiveRecord::Migration[5.2]
       t.integer :author_id, null: false 
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false 
-      t.datetime :receiver_id
+      t.integer :receiver_id
     
       t.timestamps
     end

@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2022_02_27_182024) do
     t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "receiver_id"
+    t.integer "receiver_id"
     t.index ["author_id"], name: "index_dmessages_on_author_id"
     t.index ["body"], name: "index_dmessages_on_body"
     t.index ["receiver_id"], name: "index_dmessages_on_receiver_id"
