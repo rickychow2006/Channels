@@ -25,7 +25,7 @@ class Splash extends React.Component {
           <br></br>
           <p className="splash-already-sign-in">
             Already using Channels? <br/>
-            <Link className="splash-login-link">
+            <Link to="/login" className="splash-login-link">
               Sign In
             </Link>
           </p>
