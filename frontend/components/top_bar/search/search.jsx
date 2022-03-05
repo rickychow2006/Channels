@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdSearch } from 'react-icons/md';
 
 class Search extends React.Component {
   constructor(props) {
@@ -8,10 +9,11 @@ class Search extends React.Component {
   render () {
     return ( 
       <div className='search'>
-      <input 
-      className='search-input'
-      placeholder='Search...'
-      />
+        <MdSearch className='search-icons' size='1.3em' />
+        <input 
+        className='search-input'
+        placeholder='Search ...'
+        />
     </div>
     )
   }
