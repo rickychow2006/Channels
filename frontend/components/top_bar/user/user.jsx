@@ -26,14 +26,13 @@ class User extends React.Component {
   }
 
   render() {
-
     return (
       <div className="top-user">
-        <button onClick={this.handleDropdownToggle}><img className="top-user-pic" src={window.profile} ></img></button>
+        <button onClick={this.handleDropdownToggle}><img className="top-user-pic" src={window.profile1} ></img></button>
           <div className={this.state.dropdown}>
             <div className="menu__header">
               <div className="menu__avatar">
-                <img className="menu__image" src={window.profile}/>
+                <img className="menu__image" src={window.profile1}/>
               </div>
               <div className="menu__name">
                 <h2>{this.props.users[this.props.currentUser].username}</h2>
