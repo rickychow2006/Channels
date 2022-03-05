@@ -14,7 +14,7 @@ class Api::ChannelUsersController < ApplicationController
     
     if @channeluser.save
     else 
-      render json:["Invalid action"], status 401
+      render json: ["Invalid action"], status: 401
     end
   end 
 
