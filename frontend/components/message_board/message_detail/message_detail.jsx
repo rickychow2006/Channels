@@ -8,7 +8,9 @@ class MessageDetail extends React.Component {
 
   render() {
     const authorName = (message) => {
-      return (this.props.users[message.authorId])? this.props.users[message.authorId].username:this.props.users[message.author_id].username
+      if (this.props.users[message.author]) {
+        return this.props.users[message.author].username
+      }
     }
 
     const userImage = (username) => {
